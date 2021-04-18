@@ -32,7 +32,6 @@ module.exports = {
         alias: {
             "@": path.resolve(__dirname, "../web/src"),
             "~": path.resolve(__dirname, "src/"),
-
         }
     }
 }

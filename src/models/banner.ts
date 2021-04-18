@@ -1,11 +1,5 @@
 import db from '../libs/database';
-
-export interface BannerData {
-    ID: number;
-    img: string;
-    href: string;
-    sort: number;
-}
+import { BannerData } from "@/models/banner"
 
 export async function getAllBanner(): Promise<BannerData[]> {
     // let res = await db.query('SELECT * FROM banner_table');
