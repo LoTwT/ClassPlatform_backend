@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack --mode=development",
     "build": "webpack --mode=production",
     "watch": "webpack --mode=development -w",
     "start:server": "nodemon build/server.js",
-    "start": "npm-run-all --parallel watch start:server"
+    "start": "yarn dev & npm-run-all --parallel watch start:server"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,7 @@
     "@types/react-dom": "^17.0.3",
     "@types/redis": "^2.8.28",
     "awesome-typescript-loader": "^5.2.1",
+    "axios": "^0.21.1",
     "css-loader": "^5.2.2",
     "file-loader": "^6.2.0",
     "koa": "^2.13.1",
