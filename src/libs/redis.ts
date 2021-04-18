@@ -1,7 +1,7 @@
 import redis from "redis"
 import {promisify} from "util"
 
-import redisConf from "../../config/redis"
+import redisConf from "~/config/redis"
 
 let client: redis.RedisClient = redis.createClient(redisConf)
 

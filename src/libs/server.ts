@@ -1,9 +1,11 @@
 import Koa from "koa"
 
-const app = new Koa()
+import { serverPort } from "~/config/app"
 
-app.listen(8080, () => {
-    console.log("server is running at http://localhost:8080")
+const app: Koa = new Koa()
+
+app.listen(serverPort, () => {
+    console.log(`server is running at http://localhost:${serverPort}`)
 })
 
 export default app

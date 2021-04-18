@@ -2,7 +2,7 @@ const path = require("path")
 const WebpackNodeExternals = require("webpack-node-externals")
 
 module.exports = {
-    entry: "./src/server.tsx",
+    entry: "./src/server.ts",
     output: {
         path: path.resolve(__dirname, "build"),
         filename: "server.js",
@@ -31,6 +31,8 @@ module.exports = {
         extensions: [".ts", ".tsx", ".js", "jsx"],
         alias: {
             "@": path.resolve(__dirname, "../web/src"),
+            "~": path.resolve(__dirname, "src/"),
+
         }
     }
 }
