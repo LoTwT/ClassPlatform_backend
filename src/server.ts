@@ -11,3 +11,8 @@ if (enableCors) corsInit(app)
 
 app.use(router)
 app.use(koaStatic(staticRoot))
+
+import { getSuggest } from "./models/search"
+getSuggest("js").then(res => {
+    console.log(res)
+})
