@@ -37,7 +37,7 @@ export async function getSuggest(keyword: string): Promise<SearchResult> {
             count
         DESC
         LIMIT
-            ${maxSuggestKeywords}
+            ${maxHotKeywords}
         `,
         [
             keyword + '%'

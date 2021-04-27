@@ -9,6 +9,8 @@ import path from "path"
 import fs from "fs"
 
 import { getCategory } from "~/models/category"
+import { getSuggest } from "~/models/search"
+import { AppData } from "@/models/app"
 
 const router: Router = new Router()
 
@@ -16,8 +18,10 @@ if (process.env.NODE_ENV === "production") {
     const index: string = fs.readFileSync(path.resolve(staticRoot, "index.html")).toString()
     router.get("/", async ctx => {
         let categories = await getCategory()
-        let appData = {
-            categories
+        let hotKeywords = await getSuggest("")
+        let appData: AppData = {
+            categories,
+            hotKeywords,
         }
 
         let str: string = ReactDOMServer.renderToString(<Home appData={appData} />)
@@ -25,7 +29,7 @@ if (process.env.NODE_ENV === "production") {
             `<div id="root"></div>`,
             `
             <script>
-            window.categories = ${JSON.stringify(categories)}
+            window.appData = ${JSON.stringify(appData)}
             </script>
             <div id="root">${str}</div>
             `
