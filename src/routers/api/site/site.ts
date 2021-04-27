@@ -13,4 +13,9 @@ router.get("/hot-keywords", async ctx => {
     ctx.body = await modelSearch.getSuggest("")
 })
 
+router.get("/suggest/:keyword", async ctx => {
+    const { keyword } = ctx.params
+    ctx.body = await modelSearch.getSuggest(keyword)
+})
+
 export default router.routes()
