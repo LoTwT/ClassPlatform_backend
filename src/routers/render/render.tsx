@@ -10,6 +10,8 @@ import fs from "fs"
 
 import { getCategory } from "~/models/category"
 import { getSuggest } from "~/models/search"
+import { getAllBanner } from "~/models/banner"
+
 import { AppData } from "@/models/app"
 
 const router: Router = new Router()
@@ -19,9 +21,11 @@ if (process.env.NODE_ENV === "production") {
     router.get("/", async ctx => {
         let categories = await getCategory()
         let hotKeywords = await getSuggest("")
+        let banners = await getAllBanner()
         let appData: AppData = {
             categories,
             hotKeywords,
+            banners
         }
 
         let str: string = ReactDOMServer.renderToString(<Home appData={appData} />)
