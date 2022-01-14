@@ -9,10 +9,11 @@
     "strict": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
+    "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["../web/src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "test"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts", "test"]
 }

@@ -13,7 +13,8 @@ export default defineConfig((config) => {
   return {
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./src"),
+        // web 下的 src...
+        "@": path.resolve(__dirname, "../web/src"),
       },
     },
     optimizeDeps: {
@@ -26,7 +27,7 @@ export default defineConfig((config) => {
       react(),
       ...VitePluginNode({
         adapter: "koa",
-        appPath: "./app.ts",
+        appPath: "./src/server.tsx",
       }),
     ],
   }
